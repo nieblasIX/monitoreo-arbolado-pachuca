@@ -262,7 +262,7 @@ export default function App() {
               </div>
             ))}
             <div style={{ background:"#1b4332", color:"#d8f3dc", borderRadius:8, padding:"0.8rem 1rem", fontSize:12, lineHeight:1.7, marginTop:4 }}>
-              <strong style={{ color:"#74c69d" }}>Zona crítica):</strong>{" "}
+              <strong style={{ color:"#74c69d" }}>Zona crítica:</strong>{" "}
               Camellón Blvd. Felipe Ángeles entre calle Pirita y calle Plata, frente al SGM. Coordenadas: 20.0535°N, 98.7785°O → 20.0521°N, 98.7799°O. Alternativas: solicitar permiso AFAC, usar imágenes Sentinel-2 (Copernicus) o Planet Explorer, y levantamiento fotográfico georeferenciado desde nivel de calle.
             </div>
           </div>
