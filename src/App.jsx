@@ -158,7 +158,7 @@ export default function App() {
   const total = totalArboles + totalPalmeras;
   const maxTotal = Math.max(...SOLICITUDES.map(s => s.total));
 
-  const TABS = ["Expediente", "Protocolo A/D/D", "Capas Geomáticas", "Marco Legal", "Documentos con IA", "Acción Ciudadana"];
+  const TABS = ["Expediente", "Protocolo A/D/D", "Capas Geomáticas", "Marco Legal", "Genera Documentos", "Acción Ciudadana"];
 
   const generateDoc = async () => {
     setLoading(true);
@@ -349,7 +349,7 @@ export default function App() {
           </div>
         )}
 
-        {/* ── TAB 4: DOCUMENTOS CON IA ── */}
+        {/* ── TAB 4: GENERA DOCUMENTOS ── */}
         {tab === 4 && (
           <div>
             <p style={{ fontSize:13, color:"var(--color-text-secondary)", marginBottom:"1.1rem", lineHeight:1.65 }}>
@@ -381,7 +381,7 @@ export default function App() {
                 color:"#d8f3dc", border:"none", borderRadius:8, fontSize:14, fontWeight:400,
                 cursor: loading ? "not-allowed" : "pointer", transition:"background 0.2s", fontFamily:"Georgia, serif"
               }}>
-                {loading ? "Generando documento con IA..." : "Generar documento →"}
+                {loading ? "Generando documento ..." : "Generar documento →"}
               </button>
             </div>
 
@@ -410,14 +410,15 @@ export default function App() {
         {/* ── TAB 5: ACCIÓN CIUDADANA ── */}
         {tab === 5 && (
           <div>
-            <p style={{ fontSize:13, color:"var(--color-text-secondary)", marginBottom:"1.1rem", lineHeight:1.65 }}>
+            <p
+             style={{ fontSize:13, color:"var(--color-text-secondary)", marginBottom:"1.1rem", lineHeight:1.65 }}>
               Pasos concretos que cualquier vecina, vecino o pachuqueño puede tomar hoy mismo para defender el arbolado urbano. No se necesitan conocimientos técnicos previos para empezar.
             </p>
             {[
               { title:"Documenta ahora mismo", icon:"ti-camera",
                 items:["Descarga ODK Collect o Epicollect5 para levantar datos GPS de cada árbol en riesgo","Instala iNaturalist y fotografía los árboles: la app identifica especie automáticamente","Guarda Google Street View histórico de las zonas antes de que ocurra el derribo","Coordenadas de inicio: 20.0535°N, 98.7785°O (Blvd. Felipe Ángeles / frente al SGM)"]},
               { title:"Solicita información pública", icon:"ti-file-search",
-                items:["Ingresa a plataformanacionaldetransparencia.org.mx y crea una cuenta gratuita","Usa la pestaña 'Documentos con IA' para generar tu solicitud INFOMEX en segundos","El Ayuntamiento tiene 20 días hábiles para responder con permisos y dictámenes","Si no responden o responden con evasivas, interpone recurso de revisión en la misma plataforma"]},
+                items:["Ingresa a plataformanacionaldetransparencia.org.mx y crea una cuenta gratuita","Usa la pestaña 'Genera Documentos' para generar tu solicitud INFOMEX en segundos","El Ayuntamiento tiene 20 días hábiles para responder con permisos y dictámenes","Si no responden o responden con evasivas, interpone recurso de revisión en la misma plataforma"]},
               { title:"Denuncia formalmente", icon:"ti-alert-triangle",
                 items:["PROFEPA (las 24 horas): 800-776-3372 — denuncia por daño ambiental en proceso","SEMARNATH Hidalgo: (771) 713-8505 — solicita inspección técnica urgente","CNDH: 800-715-2000 — queja por violación al derecho a un medio ambiente sano","CEDH Hidalgo: (771) 713-0333 — queja ante la Comisión Estatal de Derechos Humanos"]},
               { title:"Difunde con evidencia geolocalizada", icon:"ti-share",
