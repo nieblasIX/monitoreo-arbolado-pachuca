@@ -12,19 +12,19 @@ const SOLICITUDES_INICIALES = [
 ];
 
 const CAPAS = [
-  { id: 1, urgencia: "Alta", capa: "Cobertura vegetal histórica (2000 vs 2025)", fuente: "Landsat 5/8/9 via Google Earth Engine", formato: "GEE Script", prueba: "Línea base del arbolado urbano para cuantificar pérdida", link: "https://google.com" },
+  { id: 1, urgencia: "Alta", capa: "Cobertura vegetal histórica (2000 vs 2025)", fuente: "Sentinel-2 via Google Earth Engine", formato: "GEE Script", prueba: "Línea base del arbolado urbano para cuantificar pérdida", link: "https://resistenciatuza.projects.earthengine.app/view/pachuca-cobertura-vegetal" },
   
   { 
     id: 2, 
     urgencia: "Alta", 
     capa: "Temperatura Superficial Transparente (LST 2000-2025)", 
-    fuente: "Landsat TIRS — GEE Nube", 
+    fuente: "Landsat 5 y 9", 
     formato: "GEE App", 
     prueba: "Isla de calor urbana generada por pérdida acumulada de vegetación", 
     link: "https://resistenciatuza.projects.earthengine.app/view/pachuca-isla-de-calor" 
   },
   
-  { id: 3, urgencia: "Alta", capa: "Permeabilidad del suelo y Escorrentía", fuente: "Edafología INEGI + SRTM GEE", formato: "GeoTIFF", prueba: "Reducción de infiltración → mayor riesgo de inundación por pavimento", link: "https://resistenciatuza.projects.earthengine.app/view/pachuca-cobertura-vegetal" },
+  { id: 3, urgencia: "Alta", capa: "Permeabilidad del suelo y Escorrentía", fuente: "Sentinel-2 + SRTM GEE", formato: "GeoTIFF", prueba: "Reducción de infiltración → mayor riesgo de inundación por pavimento", link: " https://resistenciatuza.projects.earthengine.app/view/pachuca-permeabilidad-suelo" },
 ];
 
 
