@@ -12,7 +12,7 @@ const SOLICITUDES_INICIALES = [
 ];
 
 const CAPAS = [
-  { id: 1, urgencia: "Alta", capa: "Cobertura vegetal histórica (2000 vs 2025)", fuente: "Sentinel-2 via Google Earth Engine", formato: "GEE Script", prueba: "Línea base del arbolado urbano para cuantificar pérdida", link: "https://resistenciatuza.projects.earthengine.app/view/pachuca-cobertura-vegetal" },
+  { id: 1, urgencia: "Alta", capa: "Cobertura vegetal histórica (2016 vs 2026)", fuente: "Sentinel-2 via Google Earth Engine", formato: "GEE Script", prueba: "Línea base del arbolado urbano para cuantificar pérdida", link: " https://resistenciatuza.projects.earthengine.app/view/pachuca-cobertura-vegetal" },
   
   { 
     id: 2, 
