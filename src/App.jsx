@@ -12,7 +12,7 @@ const SOLICITUDES_INICIALES = [
 ];
 
 const CAPAS = [
-  { id: 1, urgencia: "Alta", capa: "Cobertura vegetal histórica (2000 vs 2025)", fuente: "Landsat 5/8/9 via Google Earth Engine", formato: "GEE Script", prueba: "Línea base del arbolado urbano para cuantificar pérdida", link: "https://code.earthengine.google.com/" },
+  { id: 1, urgencia: "Alta", capa: "Cobertura vegetal histórica (2000 vs 2025)", fuente: "Landsat 5/8/9 via Google Earth Engine", formato: "GEE Script", prueba: "Línea base del arbolado urbano para cuantificar pérdida", link: "https://google.com" },
   
   { 
     id: 2, 
@@ -21,11 +21,12 @@ const CAPAS = [
     fuente: "Landsat TIRS — GEE Nube", 
     formato: "GEE App", 
     prueba: "Isla de calor urbana generada por pérdida acumulada de vegetación", 
-    link: "https://earthengine.app" 
+    link: "https://resistenciatuza.projects.earthengine.app/view/pachuca-isla-de-calor" 
   },
   
-  { id: 3, urgencia: "Alta", capa: "Permeabilidad del suelo y Escorrentía", fuente: "Edafología INEGI + SRTM GEE", formato: "GeoTIFF", prueba: "Reducción de infiltración → mayor riesgo de inundación por pavimento", link: "https://code.earthengine.google.com/" },
+  { id: 3, urgencia: "Alta", capa: "Permeabilidad del suelo y Escorrentía", fuente: "Edafología INEGI + SRTM GEE", formato: "GeoTIFF", prueba: "Reducción de infiltración → mayor riesgo de inundación por pavimento", link: "https://google.com" },
 ];
+
 
 const LEGAL = [
   { ref: "Art. 4° CPEUM", desc: "Derecho a un medio ambiente sano para su desarrollo y bienestar", uso: "Fundamento principal para amparos colectivos y denuncias ciudadanas." },
