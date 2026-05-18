@@ -12,7 +12,7 @@ const SOLICITUDES_INICIALES = [
 ];
 
 const CAPAS = [
-  { id: 1, urgencia: "Alta", capa: "Cobertura vegetal histórica (2000 vs 2025)", fuente: "Landsat 5/8/9 via Google Earth Engine", formato: "GEE Script", prueba: "Línea base del arbolado urbano para cuantificar pérdida", link: "https://google.com" },
+  { id: 1, urgencia: "Alta", capa: "Cobertura vegetal histórica (2000 vs 2025)", fuente: "Landsat 5/8/9 via Google Earth Engine", formato: "GEE Script", prueba: "Línea base del arbolado urbano para cuantificar pérdida", link: "https://code.earthengine.google.com/" },
   
   { 
     id: 2, 
@@ -23,8 +23,8 @@ const CAPAS = [
     prueba: "Isla de calor urbana generada por pérdida acumulada de vegetación", 
     link: "https://earthengine.app" 
   },
-
-  { id: 3, urgencia: "Alta", capa: "Permeabilidad del suelo y Escorrentía", fuente: "Edafología INEGI + SRTM GEE", formato: "GeoTIFF", prueba: "Reducción de infiltración → mayor riesgo de inundación por pavimento", link: "https://google.com" },
+  
+  { id: 3, urgencia: "Alta", capa: "Permeabilidad del suelo y Escorrentía", fuente: "Edafología INEGI + SRTM GEE", formato: "GeoTIFF", prueba: "Reducción de infiltración → mayor riesgo de inundación por pavimento", link: "https://code.earthengine.google.com/" },
 ];
 
 const LEGAL = [
@@ -42,7 +42,7 @@ const PROTOCOLO = [
 // --- COMPONENTES AUXILIARES ---
 function RecenterMap({ lat, lng }) {
   const map = useMap();
-  map.setView([lat, lng], 16);
+  map.setView([lat, lng], 15);
   return null;
 }
 
@@ -50,7 +50,7 @@ function RecenterMap({ lat, lng }) {
 function App() {
   const [seccionActiva, setSeccionActiva] = useState("expediente");
   const [solicitudes, setSolicitudes] = useState(SOLICITUDES_INICIALES);
-  const [obraSeleccionada, setObraSeleccionada] = useState(SOLICITUDES_INICIALES);
+  const [obraSeleccionada, setObraSeleccionada] = useState(SOLICITUDES_INICIALES[0]);
 
   // Estado para el nuevo formulario de inventario ciudadano
   const [nuevaObra, setNuevaObra] = useState("");
@@ -132,7 +132,7 @@ function App() {
           {/* Estudios GEE */}
           <h2 style={{ fontSize: '14px', color: '#1b4332', margin: '15px 0 5px 0' }}>🛰️ Análisis Satelital GEE (2000-2025)</h2>
           {CAPAS.map(c => (
-            <div key={c.id} style={{ background: '#f8fafc', padding: '10px', borderRadius: '8px', margin: '5px 0', border: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div key={c.id} style={{ background: '#f8fafc', padding: '10px', borderRadius: '8px', margin: '5px 0', border: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', items: 'center' }}>
               <div style={{ maxWidth: '75%' }}>
                 <h4 style={{ margin: 0, fontSize: '12px' }}>{c.capa}</h4>
                 <p style={{ margin: 0, fontSize: '10px', color: '#64748b' }}>{c.prueba}</p>
