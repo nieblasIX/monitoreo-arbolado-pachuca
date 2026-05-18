@@ -13,7 +13,17 @@ const SOLICITUDES_INICIALES = [
 
 const CAPAS = [
   { id: 1, urgencia: "Alta", capa: "Cobertura vegetal histórica (2000 vs 2025)", fuente: "Landsat 5/8/9 via Google Earth Engine", formato: "GEE Script", prueba: "Línea base del arbolado urbano para cuantificar pérdida", link: "https://google.com" },
-  { id: 2, urgencia: "Alta", capa: "Temperatura Superficial (LST 2000-2025)", fuente: "Landsat TIRS — GEE Nube", formato: "GEE App", prueba: "Isla de calor urbana generada por pérdida acumulada de vegetación", link: "https://google.com" },
+  
+  { 
+    id: 2, 
+    urgencia: "Alta", 
+    capa: "Temperatura Superficial Transparente (LST 2000-2025)", 
+    fuente: "Landsat TIRS — GEE Nube", 
+    formato: "GEE App", 
+    prueba: "Isla de calor urbana generada por pérdida acumulada de vegetación", 
+    link: "https://earthengine.app" 
+  },
+
   { id: 3, urgencia: "Alta", capa: "Permeabilidad del suelo y Escorrentía", fuente: "Edafología INEGI + SRTM GEE", formato: "GeoTIFF", prueba: "Reducción de infiltración → mayor riesgo de inundación por pavimento", link: "https://google.com" },
 ];
 
@@ -40,7 +50,7 @@ function RecenterMap({ lat, lng }) {
 function App() {
   const [seccionActiva, setSeccionActiva] = useState("expediente");
   const [solicitudes, setSolicitudes] = useState(SOLICITUDES_INICIALES);
-  const [obraSeleccionada, setObraSeleccionada] = useState(SOLICITUDES_INICIALES[0]);
+  const [obraSeleccionada, setObraSeleccionada] = useState(SOLICITUDES_INICIALES);
 
   // Estado para el nuevo formulario de inventario ciudadano
   const [nuevaObra, setNuevaObra] = useState("");
@@ -105,7 +115,7 @@ function App() {
             </MapContainer>
           </div>
 
-          {/* 2. Formulario de carga (Punto Georreferenciado) */}
+          {/* Formulario de carga (Punto Georreferenciado) */}
           <div style={{ background: '#fff', padding: '12px', borderRadius: '10px', border: '1px solid #e2e8f0', marginBottom: '15px' }}>
             <h3 style={{ margin: '0 0 10px 0', fontSize: '13px', color: '#b91c1c' }}>➕ Levantar Punto / Inventario Ciudadano</h3>
             <form onSubmit={handleAgregarReporte} style={{ display: 'grid', gap: '8px' }}>
