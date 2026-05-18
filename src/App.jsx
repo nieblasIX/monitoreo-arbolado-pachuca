@@ -24,7 +24,7 @@ const CAPAS = [
     link: "https://resistenciatuza.projects.earthengine.app/view/pachuca-isla-de-calor" 
   },
   
-  { id: 3, urgencia: "Alta", capa: "Permeabilidad del suelo y Escorrentía", fuente: "Edafología INEGI + SRTM GEE", formato: "GeoTIFF", prueba: "Reducción de infiltración → mayor riesgo de inundación por pavimento", link: "https://google.com" },
+  { id: 3, urgencia: "Alta", capa: "Permeabilidad del suelo y Escorrentía", fuente: "Edafología INEGI + SRTM GEE", formato: "GeoTIFF", prueba: "Reducción de infiltración → mayor riesgo de inundación por pavimento", link: "https://resistenciatuza.projects.earthengine.app/view/pachuca-cobertura-vegetal" },
 ];
 
 
