@@ -77,8 +77,8 @@ function App() {
   const [subSeccionExpediente, setSubSeccionExpediente] = useState("obras");
   
   const [solicitudes] = useState(SOLICITUDES_INICIALES);
-  const [obraSeleccionada, setObraSeleccionada] = useState(SOLICITUDES_INICIALES[0]);
-  const [arbolSeleccionado, setArbolSeleccionado] = useState(INVENTARIO_ARBOLES[0]);
+  const [obraSeleccionada, setObraSeleccionada] = useState(SOLICITUDES_INICIALES);
+  const [arbolSeleccionado, setArbolSeleccionado] = useState(INVENTARIO_ARBOLES);
 
   const arbolesDeLaObraActiva = INVENTARIO_ARBOLES.filter(a => a.obraId === obraSeleccionada.id);
 
@@ -137,7 +137,7 @@ function App() {
             </MapContainer>
           </div>
 
-          {/* Sub-Filtros Corregidos */}
+          {/* Sub-Filtros */}
           <div style={{ display: 'flex', gap: '4px', background: '#f8fafc', padding: '3px', borderRadius: '8px', marginBottom: '12px', border: '1px solid #edf2f7' }}>
             <button onClick={() => setSubSeccionExpediente("obras")} style={{ flex: 1, padding: '6px', fontSize: '11px', border: 'none', borderRadius: '6px', fontWeight: '700', background: subSeccionExpediente === "obras" ? "#2d6a4f" : "transparent", color: subSeccionExpediente === "obras" ? "white" : "#475569" }}>📁 Obras Civiles</button>
             <button onClick={() => setSubSeccionExpediente("satelital")} style={{ flex: 1, padding: '6px', fontSize: '11px', border: 'none', borderRadius: '6px', fontWeight: '700', background: subSeccionExpediente === "satelital" ? "#2d6a4f" : "transparent", color: subSeccionExpediente === "satelital" ? "white" : "#475569" }}>🛰️ Auditoría Satelital</button>
@@ -184,7 +184,7 @@ function App() {
                 <button onClick={descargarMetadatosGeoJSON} style={{ background: '#0284c7', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '6px', fontSize: '11px', fontWeight: '700', cursor: 'pointer' }}>Extraer 💾</button>
               </div>
 
-              {/* Ficha Pedagógica Estructurada (Morfológica, Biológica, Fitosanitaria) */}
+              {/* Ficha Pedagógica Estructurada */}
               <div style={{ background: 'white', borderRadius: '16px', padding: '12px', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.02)', marginBottom: '12px' }}>
                 <div style={{ display: 'flex', gap: '12px', marginBottom: '12px' }}>
                   <img src={arbolSeleccionado.foto_url} alt={arbolSeleccionado.especie_comun} style={{ width: '85px', height: '85px', borderRadius: '12px', objectFit: 'cover' }} />
@@ -199,7 +199,7 @@ function App() {
                   </div>
                 </div>
 
-                {/* Grid Diagnóstico Técnico & Atributos de Conservación */}
+                {/* Grid Diagnóstico Técnico */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', background: '#f8fafc', padding: '8px', borderRadius: '8px', fontSize: '11px', marginBottom: '10px', border: '1px solid #edf2f7' }}>
                   <div><strong>📏 Info Morfológica:</strong><br/>• Altura: {arbolSeleccionado.altura_m}m<br/>• Tronco (DAP): {arbolSeleccionado.dap_cm}cm<br/>• Copa: {arbolSeleccionado.cobertura_copa_m2}m²<br/>• Edad aprox: {arbolSeleccionado.edad_estimada_anos} años</div>
                   <div><strong>⚠️ Diagnóstico Fitosanitario:</strong><br/>• Salud: {arbolSeleccionado.estatus_salud}<br/>• Vigor: {arbolSeleccionado.vigor}<br/>• Plagas: {arbolSeleccionado.plagas}</div>
@@ -215,7 +215,7 @@ function App() {
               <p style={{ fontSize: '10px', color: '#64748b', fontWeight: '700', margin: '10px 0 5px 0' }}>📋 SELECCIONA UN REGISTRO PARA DESPLEGAR VALOR DE CONSERVACIÓN:</p>
               <div style={{ display: 'grid', gap: '5px' }}>
                 {INVENTARIO_ARBOLES.map(a => (
-                  <div key={a.id} onClick={() => setArbolSeleccionado(a)} style={{ background: 'white', padding: '8px 10px', borderRadius: '12px', cursor: 'pointer', border: arbolSeleccionado.id === a.id ? '2px solid #166534' : '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div key={a.id} onClick={() => setArbolSeleccionado(a)} style={{ background: 'white', padding: '8px 10px', borderRadius: '12px', cursor: 'pointer', border: arbolSeleccionado.id === a.id ? '2px solid #166534' : '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', items: 'center' }}>
                     <div>
                       <h4 style={{ margin: 0, fontSize: '12px', fontWeight: '700' }}>{a.especie_comun} <span style={{ fontSize: '10px', color: '#64748b', fontWeight: 'normal' }}>({a.especie_cientifica})</span></h4>
                       <span style={{ fontSize: '10px', color: '#475569' }}>Morfología: {a.altura_m}m alt | Salud: {a.estatus_salud}</span>
